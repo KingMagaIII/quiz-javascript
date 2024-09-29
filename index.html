@@ -7,18 +7,66 @@
 </head>
 <body>
     <script>
-        alert("Salve, benvenuto in questo quiz")
-        let nome = prompt("Inserisci il tuo nome")
-        while (nome===null){
-            alert("Errore, inserisci il tuo nome")
-            nome = prompt("Inserisci il tuo nome")
-        }
-        alert(nome+" iniziamo il quiz!")
+
         let points = 0
-        let domanda = prompt("Domanda n°1: Chi è il Presidente della Repubblica italiana?").toLocaleLowerCase()
-        if(domanda===Mattarella){
-            
+        alert("Salve, benvenuto in questo quiz")
+        let name = prompt("Inserisci il tuo nome")
+        while (name===null){
+            alert("Errore, inserisci il tuo nome")
+            name = prompt("Inserisci il tuo nome")
         }
+        alert(name+" iniziamo il quiz!")
+
+        //Domanda numero 1
+        let question_1 = prompt("Domanda n°1: In che anno l'Italia ha vinto i mondiali di calcio?")
+        while(question_1===null){
+            alert("Campo obbligatorio")
+            question_1=prompt("Domanda n°1: In che anno l'Italia ha vinto i mondiali di calcio?")
+        }
+        if(question_1==="2006"){
+            points = points+1
+        }
+
+        //Domanda numero 2
+        let question_2 = prompt("Domanda n°2: In quale anno l’Italia è diventata una Repubblica?")
+        while(question_2===null){
+            alert("Campo obbligatorio")
+            question_2=prompt("Domanda n°2: In quale anno l’Italia è diventata una Repubblica?")
+        }
+        if(question_2==="1946"){
+            points = points+1
+        }
+
+        //Domanda numero 3
+        let question_3 = prompt("Domanda n°3: Quale animale è presente nel logo della Ferrari?").toLowerCase()
+        while(question_3===null){
+            alert("Campo obbligatorio")
+            question_3=prompt("Domanda n°3: Quale animale è presente nel logo della Ferrari?").toLowerCase()
+        }
+        if(question_3==="ferrari"){
+            points = points+1
+        }
+
+        //Domanda numero 4
+         let question_4 = prompt("Domanda n°4: Qual è il pianeta più grande del sistema solare?").toLowerCase()
+        while(question_4===null){
+            alert("Campo obbligatorio")
+            question_4=prompt("Domanda n°4: Qual è il pianeta più grande del sistema solare?").toLowerCase()
+        }
+        if(question_4==="giove"){
+            points = points+1
+        }
+
+        //Domanda numero 5
+        let question_5 = prompt("Domanda n°5: Quando è finita la Seconda Guerra Mondiale?").toLowerCase()
+        while(question_5===null){
+            alert("Campo obbligatorio")
+            question_5=prompt("Domanda n°5: Quando è finita la Seconda Guerra Mondiale?").toLowerCase()
+        }
+        if(question_5==="1945"){
+            points = points+1
+        }
+        alert("Quiz completato, hai effettuato "+points+"/5")
     </script>
 </body>
 </html>
