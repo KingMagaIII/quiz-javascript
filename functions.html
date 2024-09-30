@@ -8,21 +8,29 @@
 <body>
     <script>
 
-        let points = 0
-        alert("Salve, benvenuto in questo quiz")
-        let name = prompt("Inserisci il tuo nome")
-        while (name===null){
-            alert("Errore, inserisci il tuo nome")
-            name = prompt("Inserisci il tuo nome")
-        }
-        alert(name+" iniziamo il quiz!")
+        function sanitize(question){
+            //riscrivere l'esercizio del quiz rispettando i punti:
+            //1 - usare una funzione per fare il sanitize dell'input
+            //2 - usare una funzione per il calcolo della percentuale di risposte corrette  
 
+            return question.toLowerCase().trim()
+        }
+
+        function correctAnswers(points){
+            points = points*20
+            return points
+        }
+
+        let points = 0
+        alert("Salve, benvenuto in questo quiz: iniziamo!")
+        
         //Domanda numero 1
         let question_1 = prompt("Domanda n°1: In che anno l'Italia ha vinto i mondiali di calcio?")
         while(question_1===null){
             alert("Campo obbligatorio")
             question_1=prompt("Domanda n°1: In che anno l'Italia ha vinto i mondiali di calcio?")
         }
+        question_1 = sanitize(question_1)
         if(question_1==="2006"){
             points = points+1
         }
@@ -33,6 +41,7 @@
             alert("Campo obbligatorio")
             question_2=prompt("Domanda n°2: In quale anno l’Italia è diventata una Repubblica?")
         }
+        question_2 = sanitize(question_2)
         if(question_2==="1946"){
             points = points+1
         }
@@ -43,6 +52,7 @@
             alert("Campo obbligatorio")
             question_3=prompt("Domanda n°3: Quale animale è presente nel logo della Ferrari?").toLowerCase()
         }
+        question_3 = sanitize(question_3)
         if(question_3==="cavallo"){
             points = points+1
         }
@@ -53,6 +63,7 @@
             alert("Campo obbligatorio")
             question_4=prompt("Domanda n°4: Qual è il pianeta più grande del sistema solare?").toLowerCase()
         }
+        question_4 = sanitize(question_4)
         if(question_4==="giove"){
             points = points+1
         }
@@ -63,10 +74,13 @@
             alert("Campo obbligatorio")
             question_5=prompt("Domanda n°5: Quando è finita la Seconda Guerra Mondiale?").toLowerCase()
         }
+        question_5 = sanitize(question_5)
         if(question_5==="1945"){
             points = points+1
         }
+
         alert("Quiz completato, hai effettuato "+points+"/5")
+        let percentuale = correctAnswers(points)
     </script>
 </body>
 </html>
